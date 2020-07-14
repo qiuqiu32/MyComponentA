@@ -7,12 +7,20 @@
 //
 
 #import "MTAppDelegate.h"
+#import "MTViewController.h"
 
 @implementation MTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    UINavigationController *ctl = [[UINavigationController alloc] initWithRootViewController:[[MTViewController alloc] init]];
+    [ctl.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor redColor],
+       NSFontAttributeName : [UIFont fontWithName:@"Helvetica-Bold" size:17]}];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = ctl;
+    [_window makeKeyAndVisible];
     return YES;
 }
 
