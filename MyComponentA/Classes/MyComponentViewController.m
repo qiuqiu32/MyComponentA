@@ -6,7 +6,7 @@
 //
 
 #import "MyComponentViewController.h"
-
+#import <MyTestRouter/MTRouter.h>
 @interface MyComponentViewController ()
 
 @end
@@ -31,12 +31,24 @@
 -(void)rootButtonAction:(id)sender{
     
     
+    
     [self.navigationController popViewControllerAnimated:NO];
     
 }
 
+-(id)updateInfo:(NSString *)sender{
+    
+    if (sender) {
+        self.title = sender;
+    }
+    
+    return self;;
+}
+
 -(void)clickBtn{
     
+    UIViewController *viewCtl = [[MTRouter sharedInstance] performTarget:@"MyComponentBViewController" action:@"updateInfo:" arguments:[NSArray arrayWithObject:@"来自组件A"] isCacheTarget:NO];
+    [self.navigationController pushViewController:viewCtl animated:YES];
 }
 
 /*
