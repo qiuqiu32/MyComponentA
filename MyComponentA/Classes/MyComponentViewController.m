@@ -6,7 +6,8 @@
 //
 
 #import "MyComponentViewController.h"
-#import <MyTestRouter/MTRouter.h>
+#import <MyTestRouter/MtRouter.h>
+
 @interface MyComponentViewController ()
 
 @end
@@ -16,11 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"MyComponentAViewController";
+    
     [self.view setBackgroundColor:[UIColor whiteColor]];
 //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Root" style:UIBarButtonItemStylePlain target:self action:@selector(rootButtonAction:)];
     UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 150, 30)];
-    [btn setTitle:@"TO ComponentA" forState:UIControlStateNormal];
+    [btn setTitle:@"TO ComponentB" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
 
     [btn addTarget:self action:@selector(clickBtn) forControlEvents:UIControlEventTouchUpInside];
@@ -29,7 +30,6 @@
     
 }
 -(void)rootButtonAction:(id)sender{
-    
     
     
     [self.navigationController popViewControllerAnimated:NO];
@@ -42,12 +42,12 @@
         self.title = sender;
     }
     
-    return self;;
+    return self;
 }
 
 -(void)clickBtn{
-    
-    UIViewController *viewCtl = [[MTRouter sharedInstance] performTarget:@"MyComponentBViewController" action:@"updateInfo:" arguments:[NSArray arrayWithObject:@"来自组件A"] isCacheTarget:NO];
+  
+    UIViewController *viewCtl = [[MTRouter sharedInstance] performTarget:@"MyComponentBViewController" action:@"updateInfo:" arguments:[NSArray arrayWithObject:@"来自组件A"] isCacheTarget:YES];
     [self.navigationController pushViewController:viewCtl animated:YES];
 }
 
