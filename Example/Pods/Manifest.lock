@@ -4,26 +4,29 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - MyComponentA (0.1.0):
-    - MyTestRouter (~> 0.1.0)
+  - MyComponentA (0.1.1):
+    - MyTestRouter (~> 0.1.1)
   - MyTestRouter (0.1.1)
 
 DEPENDENCIES:
   - FBSnapshotTestCase
-  - MyComponentA
+  - MyComponentA (from `../`)
   - MyTestRouter (~> 0.1.1)
 
 SPEC REPOS:
   trunk:
     - FBSnapshotTestCase
-    - MyComponentA
     - MyTestRouter
+
+EXTERNAL SOURCES:
+  MyComponentA:
+    :path: "../"
 
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  MyComponentA: a291904b3e6ed0b48137e612b2758855d3184c04
+  MyComponentA: 046e527ddfd1819d9e90757f626cc1eeed5ba8ea
   MyTestRouter: d21680713d0094107a09a3be5d45eb388a906867
 
-PODFILE CHECKSUM: 462f9e2d8a4cf86baf1498ad4ab9d741fcb5c704
+PODFILE CHECKSUM: 543449ae27cf2db34a8cad4c40d9f8fb01500b30
 
 COCOAPODS: 1.9.3
