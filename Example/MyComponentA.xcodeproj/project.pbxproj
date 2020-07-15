@@ -366,10 +366,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MyComponentA_Example/Pods-MyComponentA_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/MyComponentA/MyComponentA.framework",
+				"${BUILT_PRODUCTS_DIR}/MyTestRouter/MyTestRouter.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MyComponentA.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MyTestRouter.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
